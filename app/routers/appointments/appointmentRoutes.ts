@@ -5,7 +5,7 @@ import {
   getAppointments,
   updateAppointment
 } from "../../controllers/appointmentController";
-
+ 
 const router = Router();
 
 router.get('/', getAppointments);

@@ -3,7 +3,6 @@ import { Schema, model, Document } from 'mongoose';
 interface IAppointment extends Document {
   name: string;
   date: Date;
-  hour: string;
   location: string;
 }
 
@@ -21,12 +20,7 @@ const appointmentSchema = new Schema<IAppointment>({
     type: String,
     required: [true, 'O local do agendamento é obrigatório.'],
     trim: true
-  },
-  hour: {
-    type: String,
-    required: [true, 'A hora do agendamento é obrigatória.']
   }
-
 }, { timestamps: true });
 
 // Validação para evitar conflitos de horário e local
